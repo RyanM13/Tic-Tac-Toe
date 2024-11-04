@@ -11,26 +11,26 @@ Board::Board() {
 }
 
 void Board::Place_x(int row, int col) {
-     if(board[row][col] == 'y'){
-       std::cout<< "y is already placed here pick somewhere else";
+     if(board[row][col] == 'O'){
+       std::cout<< "O is already placed here pick somewhere else";
        std::cin >> row >> col;
        Place_x(row,col);
 
     }
     else{
-        board[row][col] = 'x';
+        board[row][col] = 'X';
     }
     
 }
 
-void Board::Place_y(int row, int col) {
-    if(board[row][col] == 'x'){
-       std::cout<< "x is already placed here pick somewhere else";
+void Board::Place_o(int row, int col) {
+    if(board[row][col] == 'X'){
+       std::cout<< "X is already placed here pick somewhere else";
        std::cin >> row>>col;
-       Place_y(row,col);
+       Place_o(row,col);
     }
     else{
-        board[row][col] = 'y';
+        board[row][col] = 'O';
     }
     
 }

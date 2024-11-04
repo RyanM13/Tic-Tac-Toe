@@ -48,7 +48,7 @@ void PlaceY(Board& board){
     std::cout << "Place your x and y cords for the Y: ";
     std:: cin >> x>> y;
 
-    board.Place_y(x,y);
+    board.Place_o(x,y);
     board.show();
 
 

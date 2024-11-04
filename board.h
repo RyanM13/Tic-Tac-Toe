@@ -9,7 +9,7 @@ private:
 public:
     Board();
     void Place_x(int row, int col);
-    void Place_y(int row, int col);
+    void Place_o(int row, int col);
     void GameLogic(bool&);
     void show();
 };
