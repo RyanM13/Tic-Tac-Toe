@@ -3,9 +3,9 @@
 #include <string>
 #include "board.h"
 
-void Play(Board,bool); 
-void PlaceX(Board);
-void PlaceY(Board);
+void Play(Board&,bool); 
+void PlaceX(Board&);
+void PlaceY(Board&);
 
 int main() {
     Board board;
@@ -19,40 +19,33 @@ int main() {
 
 
 
-void Play(Board board,bool play){ 
-    int x, y = 0;
-    std::cout << "Place your x and y cords for the X";
-    std::cin >> x >> y;
-
-    board.Place_x(x,y);
-
-    std::cout << "Place your x and y cords for the Y";
-    std:: cin >> x>> y;
-
-    board.Place_y(x,y);
-
-    board.show();
+void Play(Board& board,bool play){ 
+    PlaceX(board);
+    PlaceY(board);
+    board.GameLogic();
 
 }
 
-void PlaceX(Board board){
+void PlaceX(Board& board){
     int x,y=0;
     std::cout << "Place your x and y cords for the X: ";
     std::cin >> x >> y;
 
     board.Place_x(x,y);
+    board.show();
 
 
 
 }
 
 
-void PlaceY(Board board){
+void PlaceY(Board& board){
     int x,y=0;
     std::cout << "Place your x and y cords for the Y: ";
     std:: cin >> x>> y;
 
     board.Place_y(x,y);
+    board.show();
 
 
 }
