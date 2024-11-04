@@ -35,13 +35,17 @@ void Board::Place_y(int row, int col) {
     
 }
 
-void Board::GameLogic(){
-    for(int i = 0; i < sizeof(board);i++){
-        if (board[i][0] == 'x' && board[i][0] == 'x' && board[i][0] == 'x'){
+void Board::GameLogic(bool& play){
+    for(int i = 0; i < 3;i++){
+        if (board[i][0] == 'x' && board[i][1] == 'x' && board[i][2] == 'x'){
             std::cout<<"Player 1 has won.";
+            play = false;
+            return;
         }
-        else if(board[i][0] == 'y' && board[i][0] == 'y' && board[i][0] == 'y'){
+        else if(board[i][0] == 'y' && board[i][1] == 'y' && board[i][2] == 'y'){
             std::cout<< "Plyer 2 has won. ";
+            play = false;
+            return;
         }
     }
     

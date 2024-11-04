@@ -3,15 +3,17 @@
 #include <string>
 #include "board.h"
 
-void Play(Board&,bool); 
+void Play(Board&,bool&); 
 void PlaceX(Board&);
 void PlaceY(Board&);
 
 int main() {
     Board board;
     bool play = true;
+    while (play == true){
+        Play(board, play);
 
-    Play(board, play);
+    }
     
 
     return 0;
@@ -19,11 +21,13 @@ int main() {
 
 
 
-void Play(Board& board,bool play){ 
-    PlaceX(board);
-    PlaceY(board);
-    board.GameLogic();
-
+void Play(Board& board,bool &play){ 
+        PlaceX(board);
+        board.GameLogic(play);
+    if (play != false){
+        PlaceY(board);
+        board.GameLogic(play);
+    }
 }
 
 void PlaceX(Board& board){
